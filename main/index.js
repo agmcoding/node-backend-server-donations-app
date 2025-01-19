@@ -1,10 +1,12 @@
 const express = require('express');
-
 const app = express();
 const PORT = 3000;
 
+const router = require('../routes/routesIndex');
+router(express, app);
+
 app.get('/', (request, response) => {
-  response.send('Hi there!');
+  response.send('Response from Donations App!');
 });
 
 app.listen(PORT, () => {
